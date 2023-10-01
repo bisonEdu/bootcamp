@@ -2,7 +2,7 @@ import {Button} from "../Button/component.jsx";
 import {useState} from "react";
 import styles from './styles.module.scss';
 
-export const Dish = ({min, max}) => {
+export const Dish = ({name, min, max}) => {
     const [count, setCount] = useState(0);
 
     const handleIncrement = () => {
@@ -15,7 +15,8 @@ export const Dish = ({min, max}) => {
 
     return (
         <div className={styles.root}>
-            <div className={styles.counter}>
+            <div>{name}</div>
+            <div className={styles.item}>
                 <Button
                     className={styles.button}
                     title="-"
