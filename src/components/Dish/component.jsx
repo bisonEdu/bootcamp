@@ -1,10 +1,9 @@
 import { Button } from "../Button/component.jsx";
 import { useState } from "react";
 
-export const Dish = ({ name }) => {
+export const Dish = ({ name, min, max }) => {
   const [count, setCount] = useState(0);
-  const min = 0;
-  const max = 5;
+
   const handleIncrement = () => {
     setCount(count + 1);
   };

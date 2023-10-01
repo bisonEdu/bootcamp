@@ -1,5 +1,8 @@
 import { Dish } from "../Dish/component.jsx";
 
+const min = 0;
+const max = 5;
+
 export const Menu = ({ menu }) => {
   return (
     <div>
@@ -7,7 +10,7 @@ export const Menu = ({ menu }) => {
       {menu.map(({ id, name }) => (
         <ul key={id}>
           <li>
-            <Dish name={name} />
+            <Dish name={name} min={min} max={max} />
           </li>
         </ul>
       ))}
