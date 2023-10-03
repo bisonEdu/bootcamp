@@ -1,7 +1,10 @@
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
+import classNames from "classnames";
 
-export const Header = () => {
-    return (
-        <header className={styles.header}>The Restaurant App</header>
-    )
-}
+export const Header = ({ className }) => {
+  return (
+    <header className={classNames(styles.header, className)}>
+      The Restaurant App
+    </header>
+  );
+};
