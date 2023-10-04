@@ -12,20 +12,17 @@ export const Tabs = ({ buttons, onTabChange }) => {
 
   return (
     <div className={styles.tabsContainer}>
-        {buttons.map((button, index) => (
-          <button
-            key={index}
-            onClick={() => handleTabClick(index)}
-            className={classNames(styles.tab, {
-                [styles.active]: index === activeTab
-            })}
-          >
-            {button}
-          </button>
-        ))}
+      {buttons.map((button, index) => (
+        <button
+          key={index}
+          onClick={() => handleTabClick(index)}
+          className={classNames(styles.tab, {
+            [styles.active]: index === activeTab,
+          })}
+        >
+          {button}
+        </button>
+      ))}
     </div>
-
-
-
   );
 };

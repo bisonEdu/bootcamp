@@ -1,4 +1,4 @@
-import styles from './styles.module.scss';
+import styles from "./styles.module.scss";
 
 export const Reviews = ({ reviews }) => {
   return (
@@ -7,7 +7,7 @@ export const Reviews = ({ reviews }) => {
       {reviews.map(({ id, text, user }) => (
         <ul key={id}>
           <li>
-              <span className={styles.user}>{user}</span> - <span>{text}</span>
+            <span className={styles.user}>{user}</span> - <span>{text}</span>
           </li>
         </ul>
       ))}
