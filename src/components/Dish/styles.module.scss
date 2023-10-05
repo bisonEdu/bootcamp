@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  width: 100px;
+  flex-direction: column;
+}
+
+.amount {
+  min-width: 0;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  display: flex;
+}

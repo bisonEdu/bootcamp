@@ -1,4 +1,6 @@
 import { useState } from "react";
+import styles from "./styles.module.scss";
+import classNames from "classnames";
 
 export const Tabs = ({ buttons, onTabChange }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -9,22 +11,21 @@ export const Tabs = ({ buttons, onTabChange }) => {
   };
 
   return (
-    <div className="tabs-container">
-      <div className="tabs-buttons">
+    <div className={styles.tabsContainer}>
         {buttons.map((button, index) => (
           <button
             key={index}
             onClick={() => handleTabClick(index)}
-            style={{
-              fontWeight: index === activeTab ? "bold" : "normal",
-              color: index === activeTab ? "blue" : "black",
-            }}
-            className={index === activeTab ? "active" : ""}
+            className={classNames(styles.tab, {
+                [styles.active]: index === activeTab
+            })}
           >
             {button}
           </button>
         ))}
-      </div>
     </div>
+
+
+
   );
 };

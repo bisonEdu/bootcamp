@@ -1,0 +1,19 @@
+.content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.block {
+  padding: 20px;
+}
+
+.footer {
+  margin-top: auto;
+}

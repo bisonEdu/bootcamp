@@ -1,0 +1,23 @@
+.button {
+  color: white;
+  background-color: #FFBF9B;
+  border: 1px solid #FFBF9B;
+  border-radius: 2px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-weight: 700;
+  font-size: 24px;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.disabled {
+  background-color: #e5e5e5;
+  border: 1px solid #e5e5e5;
+}

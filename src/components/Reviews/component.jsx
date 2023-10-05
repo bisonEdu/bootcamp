@@ -1,3 +1,5 @@
+import styles from './styles.module.scss';
+
 export const Reviews = ({ reviews }) => {
   return (
     <div>
@@ -5,7 +7,7 @@ export const Reviews = ({ reviews }) => {
       {reviews.map(({ id, text, user }) => (
         <ul key={id}>
           <li>
-            {user} - <span>{text}</span>
+              <span className={styles.user}>{user}</span> - <span>{text}</span>
           </li>
         </ul>
       ))}
