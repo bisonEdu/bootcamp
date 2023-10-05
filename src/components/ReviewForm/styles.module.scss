@@ -1,0 +1,25 @@
+.root {
+  background-color: #ccc;
+  height: 250px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+}
+.input {
+  outline: none;
+  width: 90%;
+  padding: 5px;
+  margin: 10px;
+}
+
+.input:focus {
+  border: 2px solid #ccc;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
