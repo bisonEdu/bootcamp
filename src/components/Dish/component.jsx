@@ -1,8 +1,10 @@
 import { Button } from "../Button/component.jsx";
 import { useState } from "react";
 import styles from "./styles.module.scss";
+import { useSelector } from "react-redux";
 
-export const Dish = ({ name, min, max }) => {
+export const Dish = ({ min, max, dishId }) => {
+  const dish = useSelector((state) => state.dish.entities[dishId]);
   const [count, setCount] = useState(0);
 
   const handleIncrement = () => {
@@ -15,7 +17,7 @@ export const Dish = ({ name, min, max }) => {
 
   return (
     <div className={styles.root}>
-      <div>{name}</div>
+      <div>{dish.name}</div>
       <div className={styles.item}>
         <Button
           className={styles.button}

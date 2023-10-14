@@ -4,14 +4,14 @@ import styles from "./styles.module.scss";
 const min = 0;
 const max = 5;
 
-export const Menu = ({ menu }) => {
+export const Menu = ({ ids }) => {
   return (
     <div>
       <h3>Menu</h3>
       <ul className={styles.menu}>
-        {menu.map(({ id, name }) => (
+        {ids.map((id) => (
           <li key={id} className={styles.item}>
-            <Dish name={name} min={min} max={max} />
+            <Dish dishId={id} min={min} max={max} />
           </li>
         ))}
       </ul>
