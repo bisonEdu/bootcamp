@@ -23,7 +23,9 @@ export const MainPage = () => {
           setActiveRestaurantId={setActiveRestaurantId}
           activeTabId={activeRestaurantId}
         />
-        <Restaurant activeRestaurantId={activeRestaurantId} />
+        {activeRestaurantId && (
+          <Restaurant activeRestaurantId={activeRestaurantId} />
+        )}
       </div>
 
       <Footer className={styles.footer} />

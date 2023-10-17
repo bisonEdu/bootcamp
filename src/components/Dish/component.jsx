@@ -2,9 +2,10 @@ import { Button } from "../Button/component.jsx";
 import { useState } from "react";
 import styles from "./styles.module.scss";
 import { useSelector } from "react-redux";
+import { selectDishNameById } from "../../redux/entities/dish/selectors.js";
 
 export const Dish = ({ min, max, dishId }) => {
-  const dish = useSelector((state) => state.dish.entities[dishId]);
+  const name = useSelector((state) => selectDishNameById(state, dishId));
   const [count, setCount] = useState(0);
 
   const handleIncrement = () => {
@@ -17,7 +18,7 @@ export const Dish = ({ min, max, dishId }) => {
 
   return (
     <div className={styles.root}>
-      <div>{dish.name}</div>
+      <div>{name}</div>
       <div className={styles.item}>
         <Button
           className={styles.button}
