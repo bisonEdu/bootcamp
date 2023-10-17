@@ -3,10 +3,14 @@
   font-weight: bold;
 }
 
-.tabs-container {
+.tabsContainer {
   display: flex;
   padding: 10px;
 }
 .tab {
   margin-right: 20px;
+}
+.tabButtons {
+  display: flex;
+  flex-direction: column;
 }

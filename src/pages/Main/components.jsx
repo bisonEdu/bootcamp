@@ -1,14 +1,15 @@
-import { Tabs } from "../../components/Tabs/component.jsx";
 import { useState } from "react";
-import { Restaurant } from "../../components/Restaurant/component.jsx";
 import styles from "./styles.module.scss";
 import { Header } from "../../components/Header/component.jsx";
 import { Footer } from "../../components/Footer/component.jsx";
 import classNames from "classnames";
 import { useSelector } from "react-redux";
+import { RestaurantTabContainer } from "../../components/Tabs/container.jsx";
+import { selectRestaurantIds } from "../../redux/entities/restaurant/selectors.js";
+import { RestaurantContainer } from "../../components/Restaurant/container.jsx";
 
 export const MainPage = () => {
-  const restaurantIds = useSelector((state) => state.restaurant.ids);
+  const restaurantIds = useSelector(selectRestaurantIds);
   const [activeRestaurantId, setActiveRestaurantId] = useState(
     restaurantIds[0]
   );
@@ -18,13 +19,12 @@ export const MainPage = () => {
       <Header className={styles.header} />
 
       <div className={styles.block}>
-        <Tabs
-          restaurantIds={restaurantIds}
-          setActiveRestaurantId={setActiveRestaurantId}
+        <RestaurantTabContainer
           activeTabId={activeRestaurantId}
+          setActiveRestaurantId={setActiveRestaurantId}
         />
         {activeRestaurantId && (
-          <Restaurant activeRestaurantId={activeRestaurantId} />
+          <RestaurantContainer restaurantId={activeRestaurantId} />
         )}
       </div>
 

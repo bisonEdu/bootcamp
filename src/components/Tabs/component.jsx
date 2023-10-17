@@ -1,23 +1,20 @@
 import styles from "./styles.module.scss";
-import classNames from "classnames";
-import { useSelector } from "react-redux";
+import { Tab } from "../Tab/component.jsx";
+import { RestaurantTabContainer } from "../RestaurantTab/container.jsx";
 
 export const Tabs = ({ restaurantIds, setActiveRestaurantId, activeTabId }) => {
-  const restaurant = useSelector((state) => state.restaurant.entities);
   console.log("restaurantIds", restaurantIds);
 
   return (
     <div className={styles.tabsContainer}>
       {restaurantIds.map((id) => (
-        <button
+        <RestaurantTabContainer
+          restaurantId={id}
           key={id}
-          onClick={() => setActiveRestaurantId(id)}
-          className={classNames(styles.tab, {
-            [styles.active]: activeTabId === id,
-          })}
-        >
-          {restaurant[id].name}
-        </button>
+          tabId={id}
+          setActiveRestaurantId={setActiveRestaurantId}
+          activeTabId={activeTabId}
+        />
       ))}
     </div>
   );
