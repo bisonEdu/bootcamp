@@ -1,10 +1,10 @@
 import { ReviewContainer } from "../Review/container.jsx";
 
-export const Reviews = ({ ids }) => {
+export const Reviews = ({ reviews }) => {
   return (
     <div>
       <h3>Reviews</h3>
-      {ids.map((id) => (
+      {reviews.map((id) => (
         <ul key={id}>
           <li>
             <ReviewContainer reviewId={id} />
